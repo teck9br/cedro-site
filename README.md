@@ -9,7 +9,15 @@ Site estático (HTML + CSS + JS, sem build). Abra `index.html` no navegador ou p
 4. **Política de privacidade:** revise `privacidade.html` com o jurídico (razão social e CNPJ).
 
 ## Páginas
-index · quem-somos · solucoes (planos e avulsos) · como-atuamos · conteudos + 3 artigos · contato (formulário que abre o WhatsApp) · privacidade · 404
+- **Home** (index): hero, segmentos, 3 serviços principais, outros serviços, diferencial, acompanhamento, etapas, conteúdos, FAQ.
+- **Soluções** (solucoes): visão geral, cards de serviço, planos, avulsos, próximas frentes.
+- **Uma página por serviço**: servico-diagnostico-para-licitar, servico-monitoramento-de-editais, servico-analise-de-editais, servico-assessoria-em-licitacoes, servico-gestao-de-contratos-publicos, servico-treinamento-em-licitacoes.
+- **Conteúdos**: conteudos (blog) + 3 artigos + glossario-de-licitacoes.
+- **Empresa**: quem-somos, como-atuamos. Também: contato, privacidade, 404.
+- `robots.txt` e `sitemap.xml` (atualize o sitemap ao criar páginas novas).
+
+## Menu
+O cabeçalho e o rodapé são iguais em todas as páginas, com submenus Soluções / Conteúdos / Empresa. Ao mudar o menu, aplique a mesma alteração em todos os arquivos .html.
 
 ## Identidade
 Cores e fontes do manual: azul-marinho #0D2B4A, dourado champagne #D4A67F, bege #F2E9DC, grafite #2B2B2B; Playfair Display + Montserrat. Tokens em `assets/css/style.css`.

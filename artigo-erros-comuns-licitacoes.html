@@ -60,14 +60,53 @@
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu"><span></span><span></span><span></span></button>
       <nav class="nav" id="menu" aria-label="Principal">
         <ul class="nav__list">
-          <li><a href="index.html">Início</a></li>
-          <li><a href="quem-somos.html">Quem somos</a></li>
-          <li><a href="solucoes.html">Soluções</a></li>
-          <li><a href="como-atuamos.html">Como atuamos</a></li>
-          <li><a href="conteudos.html">Conteúdos</a></li>
-          <li><a href="contato.html">Contato</a></li>
+          <li class="nav__item nav__item--menu">
+            <button class="nav__trigger" type="button" aria-expanded="false" aria-controls="mega-solucoes">Soluções<i class="ph ph-caret-down" aria-hidden="true"></i></button>
+            <div class="mega mega--wide" id="mega-solucoes">
+              <div class="mega__main">
+                <p class="mega__label">Licitações e contratos públicos</p>
+                <ul class="mega__grid">
+              <li><a class="mega__link" href="servico-diagnostico-para-licitar.html"><i class="ph-light ph-clipboard-text" aria-hidden="true"></i><span><span class="mega__title">Diagnóstico para licitar</span><span class="mega__desc">Descubra se a sua empresa está apta e o que falta para começar.</span></span></a></li>
+              <li><a class="mega__link" href="servico-monitoramento-de-editais.html"><i class="ph-light ph-binoculars" aria-hidden="true"></i><span><span class="mega__title">Monitoramento de editais</span><span class="mega__desc">Editais do seu segmento selecionados e enviados com os prazos.</span></span></a></li>
+              <li><a class="mega__link" href="servico-analise-de-editais.html"><i class="ph-light ph-file-magnifying-glass" aria-hidden="true"></i><span><span class="mega__title">Análise de editais</span><span class="mega__desc">Requisitos, riscos e checklist antes de decidir participar.</span></span></a></li>
+              <li><a class="mega__link" href="servico-assessoria-em-licitacoes.html"><i class="ph-light ph-briefcase" aria-hidden="true"></i><span><span class="mega__title">Assessoria contínua em licitações</span><span class="mega__desc">Propostas, documentos, sessões e prazos cuidados todo mês.</span></span></a></li>
+              <li><a class="mega__link" href="servico-gestao-de-contratos-publicos.html"><i class="ph-light ph-buildings" aria-hidden="true"></i><span><span class="mega__title">Gestão de negócios públicos</span><span class="mega__desc">Volume alto, várias linhas de negócio e contratos em execução.</span></span></a></li>
+              <li><a class="mega__link" href="servico-treinamento-em-licitacoes.html"><i class="ph-light ph-chalkboard-teacher" aria-hidden="true"></i><span><span class="mega__title">Treinamento em licitações</span><span class="mega__desc">Capacitação da sua equipe em processos e plataformas.</span></span></a></li>
+                </ul>
+              </div>
+              <div class="mega__aside">
+                <p class="mega__label">Planos</p>
+                <a class="mega__plain" href="solucoes.html">Todas as soluções</a>
+                <a class="mega__plain" href="solucoes.html#planos">Planos e valores</a>
+                <a class="mega__plain" href="solucoes.html#avulsos">Serviços avulsos</a>
+                <p class="mega__label mt-6">Em breve</p>
+                <span class="mega__soon">Crédito empresarial</span>
+                <span class="mega__soon">Gestão e estratégia</span>
+              </div>
+            </div>
+          </li>
+          <li class="nav__item"><a href="solucoes.html#planos" data-plain>Planos</a></li>
+          <li class="nav__item nav__item--menu">
+            <button class="nav__trigger" type="button" aria-expanded="false" aria-controls="mega-conteudos">Conteúdos<i class="ph ph-caret-down" aria-hidden="true"></i></button>
+            <div class="mega" id="mega-conteudos">
+              <ul class="mega__grid mega__grid--one">
+                <li><a class="mega__link" href="conteudos.html"><i class="ph-light ph-newspaper" aria-hidden="true"></i><span><span class="mega__title">Blog</span><span class="mega__desc">Artigos práticos sobre licitações e contratos públicos.</span></span></a></li>
+                <li><a class="mega__link" href="glossario-de-licitacoes.html"><i class="ph-light ph-book-open-text" aria-hidden="true"></i><span><span class="mega__title">Glossário de licitações</span><span class="mega__desc">Os principais termos das compras públicas, explicados.</span></span></a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav__item nav__item--menu">
+            <button class="nav__trigger" type="button" aria-expanded="false" aria-controls="mega-empresa">Empresa<i class="ph ph-caret-down" aria-hidden="true"></i></button>
+            <div class="mega" id="mega-empresa">
+              <ul class="mega__grid mega__grid--one">
+                <li><a class="mega__link" href="quem-somos.html"><i class="ph-light ph-tree-evergreen" aria-hidden="true"></i><span><span class="mega__title">Quem somos</span><span class="mega__desc">Nossa história, propósito e valores.</span></span></a></li>
+                <li><a class="mega__link" href="como-atuamos.html"><i class="ph-light ph-path" aria-hidden="true"></i><span><span class="mega__title">Como atuamos</span><span class="mega__desc">O método da CEDRO, do diagnóstico ao contrato.</span></span></a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav__item"><a href="contato.html">Contato</a></li>
         </ul>
-        <a class="btn btn--gold btn--sm" href="contato.html">Fale com um especialista</a>
+        <a class="btn btn--gold btn--sm" href="contato.html">Agendar uma conversa</a>
       </nav>
     </div>
   </header>
@@ -157,28 +196,37 @@
   <!-- ===== RODAPÉ (igual em todas as páginas) ===== -->
   <footer class="site-footer">
     <div class="container">
-      <div class="site-footer__grid">
+      <div class="site-footer__grid site-footer__grid--5">
         <div>
           <a class="brand" href="index.html" aria-label="CEDRO Soluções Empresariais, página inicial">
             <svg viewBox="0 0 200 232" aria-hidden="true"><g fill="currentColor"><rect x="98.5" y="12" width="3" height="200"/><path d="M100 12 60 34 100 26Z M100 12 140 34 100 26Z"/><path d="M100 46 42 78 100 61Z M100 46 158 78 100 61Z"/><path d="M100 84 24 126 100 100Z M100 84 176 126 100 100Z"/><path d="M100 124 6 176 100 141Z M100 124 194 176 100 141Z"/></g></svg>
             <span class="brand__text"><span class="brand__name">CEDRO</span><span class="brand__sub">Soluções Empresariais</span></span>
           </a>
           <p class="slogan">Raízes sólidas. Crescimento duradouro.</p>
-        </div>
-        <div>
-          <h2>Empresa</h2>
-          <ul>
-            <li><a href="quem-somos.html">Quem somos</a></li>
-            <li><a href="como-atuamos.html">Como atuamos</a></li>
-            <li><a href="conteudos.html">Conteúdos</a></li>
-          </ul>
+          <p class="site-footer__place"><i class="ph-light ph-map-pin" aria-hidden="true"></i>Natal/RN · Atendimento em todo o Brasil</p>
         </div>
         <div>
           <h2>Soluções</h2>
           <ul>
-            <li><a href="solucoes.html">Licitações e contratos públicos</a></li>
-            <li><a href="solucoes.html#planos">Planos</a></li>
-            <li><a href="solucoes.html#avulsos">Serviços avulsos</a></li>
+            <li><a href="servico-diagnostico-para-licitar.html">Diagnóstico para licitar</a></li>
+            <li><a href="servico-monitoramento-de-editais.html">Monitoramento de editais</a></li>
+            <li><a href="servico-analise-de-editais.html">Análise de editais</a></li>
+            <li><a href="servico-assessoria-em-licitacoes.html">Assessoria contínua em licitações</a></li>
+            <li><a href="servico-gestao-de-contratos-publicos.html">Gestão de negócios públicos</a></li>
+            <li><a href="servico-treinamento-em-licitacoes.html">Treinamento em licitações</a></li>
+            <li><a href="solucoes.html#planos">Planos e valores</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Conteúdos</h2>
+          <ul>
+            <li><a href="conteudos.html">Blog</a></li>
+            <li><a href="glossario-de-licitacoes.html">Glossário de licitações</a></li>
+          </ul>
+          <h2 class="mt-6">Empresa</h2>
+          <ul>
+            <li><a href="quem-somos.html">Quem somos</a></li>
+            <li><a href="como-atuamos.html">Como atuamos</a></li>
           </ul>
         </div>
         <div>
@@ -187,8 +235,8 @@
             <li><a data-wa href="contato.html"><span data-wa-label>WhatsApp</span></a></li>
             <li><a data-email href="contato.html"></a></li>
             <li><a data-instagram href="contato.html"></a></li>
-            <li>Natal/RN</li>
           </ul>
+          <a class="btn btn--glass btn--sm mt-6" href="contato.html">Agendar uma conversa</a>
         </div>
       </div>
       <div class="site-footer__bottom">

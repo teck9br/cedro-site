@@ -158,7 +158,7 @@ document.querySelectorAll(".reveal").forEach((el) => {
   el.style.setProperty("--i", sibs.indexOf(el));
 });
 /* Itens de grades revelam em cascata */
-document.querySelectorAll(".steps, .plans, .articles, .faq, .checklist, .phases, .principles, .pillars, .fronts, .services").forEach((grid) => {
+document.querySelectorAll(".steps, .plans, .articles, .faq, .checklist, .phases, .principles, .pillars, .fronts, .services, .svc-grid, .cares, .benefits").forEach((grid) => {
   Array.from(grid.children).forEach((c, i) => {
     if (!c.classList.contains("reveal")) { c.classList.add("reveal"); c.style.setProperty("--i", i); }
   });
@@ -203,13 +203,47 @@ if (toggle) {
   document.addEventListener("keydown", (e) => { if (e.key === "Escape") close(); });
 }
 
+/* ---------- Submenus (clique, toque e teclado) ---------- */
+const menuItems = Array.from(document.querySelectorAll(".nav__item--menu"));
+const closeMenus = (except) => menuItems.forEach((li) => {
+  if (li === except) return;
+  li.classList.remove("is-open");
+  const b = li.querySelector(".nav__trigger");
+  if (b) b.setAttribute("aria-expanded", "false");
+});
+menuItems.forEach((li) => {
+  const btn = li.querySelector(".nav__trigger");
+  btn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    const open = !li.classList.contains("is-open");
+    closeMenus(li);
+    li.classList.toggle("is-open", open);
+    btn.setAttribute("aria-expanded", String(open));
+  });
+  // no desktop, sair com o ponteiro fecha o que foi aberto por clique
+  li.addEventListener("pointerleave", (e) => {
+    if (e.pointerType === "mouse" && matchMedia("(min-width: 981px)").matches) closeMenus();
+  });
+  li.addEventListener("focusout", (e) => { if (!li.contains(e.relatedTarget) && matchMedia("(min-width: 981px)").matches) closeMenus(); });
+});
+document.addEventListener("click", (e) => { if (!e.target.closest(".nav__item--menu")) closeMenus(); });
+document.addEventListener("keydown", (e) => {
+  if (e.key !== "Escape") return;
+  const open = menuItems.find((li) => li.classList.contains("is-open"));
+  closeMenus();
+  if (open) open.querySelector(".nav__trigger").focus();
+});
+
 /* Marca a página atual no menu */
 (function markCurrent() {
   const here = location.pathname.split("/").pop() || "index.html";
   const section = document.body.getAttribute("data-section"); // ex.: artigos marcam "conteudos.html"
-  document.querySelectorAll(".nav__list a").forEach((a) => {
+  document.querySelectorAll(".nav__list a:not([data-plain])").forEach((a) => {
     const target = a.getAttribute("href");
-    if (target === here || target === section) a.setAttribute("aria-current", "page");
+    const exact = target === here;
+    if (exact || (target === section && !a.closest(".mega"))) a.setAttribute("aria-current", "page");
+    const parent = a.closest(".nav__item--menu");
+    if (parent && (exact || target === section)) parent.classList.add("is-current");
   });
 })();
 
